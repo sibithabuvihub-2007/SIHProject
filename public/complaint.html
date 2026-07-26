@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaint Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Complaint Management</h2>
+
+    <form action="/addComplaint" method="POST">
+
+        <input type="text"
+               name="route"
+               placeholder="Route Name"
+               required>
+
+        <input type="text"
+               name="description"
+               placeholder="Complaint"
+               required>
+
+        <button type="submit">Save Complaint</button>
+
+    </form>
+
+    <h3>Complaint List</h3>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Route</th>
+                <th>Complaint</th>
+            </tr>
+        </thead>
+
+        <tbody id="complaintTable">
+
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <a href="index.html">
+        <button type="button">Back</button>
+    </a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

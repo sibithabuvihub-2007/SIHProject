@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Route Management</h2>
+
+    <form action="/addRoute" method="POST">
+
+        <input
+            type="number"
+            name="route_id"
+            placeholder="Route ID"
+            required>
+
+        <input
+            type="text"
+            name="route_name"
+            placeholder="Route Name"
+            required>
+
+        <input
+            type="text"
+            name="area"
+            placeholder="Area"
+            required>
+
+        <button type="submit">Save Route</button>
+
+    </form>
+
+    <h3>Route List</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Route ID</th>
+                <th>Route Name</th>
+                <th>Area</th>
+            </tr>
+        </thead>
+
+        <tbody id="routeTable">
+
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <a href="index.html">
+        <button type="button">Back</button>
+    </a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Attendance Management</h2>
+
+    <form action="/addAttendance" method="POST">
+
+        <input
+            type="number"
+            name="worker_id"
+            placeholder="Worker ID"
+            required>
+
+        <input
+            type="date"
+            name="attendance_date"
+            required>
+
+        <select name="status" required>
+            <option value="">Select Status</option>
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select>
+
+        <button type="submit">Save Attendance</button>
+
+    </form>
+
+    <h3>Attendance List</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Worker ID</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="attendanceTable">
+
+        </tbody>
+    </table>
+
+    <br>
+
+    <a href="index.html">
+        <button type="button">Back</button>
+    </a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Worker Management</h2>
+
+    <form action="/addWorker" method="POST">
+
+        <input
+            type="number"
+            name="worker_id"
+            placeholder="Worker ID"
+            required>
+
+        <input
+            type="text"
+            name="worker_name"
+            placeholder="Worker Name"
+            required>
+
+        <input
+            type="text"
+            name="phone"
+            placeholder="Phone Number"
+            required>
+
+        <button type="submit">Save Worker</button>
+
+    </form>
+
+    <h3>Worker List</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+
+        <tbody id="workerTable">
+
+        </tbody>
+    </table>
+
+    <br>
+
+    <a href="index.html">
+        <button type="button">Back</button>
+    </a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
