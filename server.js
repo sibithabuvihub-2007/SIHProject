@@ -219,3 +219,52 @@ app.get("/complaints", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server Running at http://localhost:${PORT}`);
 });
+
+// =====================
+// CHANGE 1 - Attendance Summary
+// =====================
+
+app.get("/attendanceSummary", (req, res) => {
+
+    db.all(`
+        SELECT status,
+               COUNT(*) AS total
+        FROM Attendance
+        GROUP BY status
+        ORDER BY total DESC
+    `, [], (err, rows) => {
+
+        if (err)
+            return res.send(err);
+
+        res.json(rows);
+
+    });
+
+});
+
+
+// =====================
+// CHANGE 2 - Workers Without Attendance
+// =====================
+
+app.get("/workersWithoutAttendance", (req, res) => {
+
+    db.all(`
+        SELECT w.worker_id,
+               w.worker_name,
+               w.phone
+        FROM Worker w
+        LEFT JOIN Attendance a
+        ON w.worker_id = a.worker_id
+        WHERE a.worker_id IS NULL
+    `, [], (err, rows) => {
+
+        if (err)
+            return res.send(err);
+
+        res.json(rows);
+
+    });
+
+});
